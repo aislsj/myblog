@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Http\Middleware;
-
 use App\Providers\RouteServiceProvider;
 use Closure;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
@@ -14,16 +12,20 @@ class RedirectIfAuthenticated
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Closure  $next
-     * @param  string|null  ...$guards
+     * @param  string|null  $guard
      * @return mixed
      */
-    public function handle(Request $request, Closure $next, ...$guards)
+    public function handle($request, Closure $next, $guard = null)
     {
-        $guards = empty($guards) ? [null] : $guards;
-
-        foreach ($guards as $guard) {
-            if (Auth::guard($guard)->check()) {
-                return redirect(RouteServiceProvider::HOME);
+        var_dump(Auth::guard($guard)->check());exit;
+        if (Auth::guard($guard)->check()) {
+            switch (Auth::guard($guard)) {
+                case 'web':
+                    return redirect(RouteServiceProvider::HOME);
+                case 'admin':
+                    return redirect(RouteServiceProvider::ADMIN_HOME);
+                case 'phone':
+                    return redirect(RouteServiceProvider::PHONE_HOME);
             }
         }
 
