@@ -9,7 +9,6 @@ Route::group(['namespace' => 'Home'], function () {
         Route::get('/time','TimeController@index');//时间轴
 //        Route::get('/share','ShareController@index');//代码分享
 //        Route::get('/gbook','GbookController@index');//留言
-
         //文章
         Route::group([], function () {
             Route::get('/category/{id}','CategoryController@index');
