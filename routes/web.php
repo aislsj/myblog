@@ -21,7 +21,7 @@ Route::group(['namespace' => 'Home'], function () {
 
 
 //后台
-Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
+Route::group(['prefix' => 'Admin','namespace' => 'Admin'], function () {
     Route::group(['middleware' => 'auth.admin'], function () {
         //后台首页
         Route::group([], function () {

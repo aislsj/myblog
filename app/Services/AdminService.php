@@ -2,13 +2,9 @@
 
 namespace App\Services;
 
-
-
 use App\Exceptions\InternalException;
 use App\Models\Admin;
-use App\Models\Article;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\DB;
 
 class AdminService{
@@ -91,8 +87,6 @@ class AdminService{
             return $result;
         }
     }
-
-
 
     public static function getAdmin(int $id){
         $list = Admin::on('mysql');
