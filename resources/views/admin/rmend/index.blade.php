@@ -27,23 +27,20 @@
                                 <td class="project-completion center"><small>图片</small></td>
                                 <td class="project-actions" style="text-align: center">操作</td>
                             </tr>
-                                @foreach($rmends['data'] as $value)
-                                    <tr>
-                                        <td class="project-completion center"><small>{{$value['id']}}</small></td>
-                                        <td class="project-completion center"><small>{{$value['title']}}</small></td>
-                                        <td class="" style="text-align: center"><img src="{{$value['img_auth']}}" style="max-width: 100px"></td>
-                                        <td class="project-actions" style="text-align: center">
-                                            <a href="/admin/rmend/{{$value['id']}}/edit/"  class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 修改 </a>
+                         @foreach($rmends as $value)
+                            <tr>
+                                <td class="project-completion center"><small>{{$value['id']}}</small></td>
+                                <td class="project-completion center"><small>{{$value['title']}}</small></td>
+                                <td class="" style="text-align: center"><img src="{{$value['img_auth']}}" style="max-width: 100px"></td>
+                                <td class="project-actions" style="text-align: center">
+                                    <a href="/admin/rmend/{{$value['id']}}/edit/"  class="btn btn-white btn-sm"><i class="fa fa-folder"></i> 修改 </a>
+                                    <span onclick="deletes(this,{{$value['id']}})" class="btn btn-danger btn-sm"><i class="fa fa-pencil"></i> 删除</span>
 
-                                        </td>
-                                    </tr>
-                                @endforeach
-
+                                </td>
+                            </tr>
+                        @endforeach
                             </tbody>
                         </table>
-
-
-
                     </div>
                 </div>
             </div>
@@ -65,15 +62,13 @@
         }, function(){
             $.post("/admin/rmend/"+id,{"_token":'{{csrf_token()}}',"_method":"delete"},
                     function(data){
-                        //判断是否成功
-                        if(data==1){
-                            //移除数据
+                        if(data['code']==1000){
                             tot = Number($('#tot').html());
                             $('#tot').html(--tot);
                             $(obj).parent().parent().remove();
                             layer.msg('删除成功');
                         }else {
-                            layer.msg('删除失败')
+                            layer.msg(data['msg']);
                         }
                     })
         }, function(){

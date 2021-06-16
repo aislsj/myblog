@@ -12,7 +12,7 @@
 
     @foreach($article as $value)
             <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-                <h3 class="blogtitle"><a href="/category/info/{{$value['id']}}" >{{$value['article_name']}}</a></h3>
+                <h3 class="blogtitle"><a href="/article/info/{{$value['id']}}" >{{$value['article_name']}}</a></h3>
 
                 @if ($article['article_img_status_name'] == '普通图片')
                     @foreach($article['articleImg'] as $article_img)

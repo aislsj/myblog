@@ -14,11 +14,10 @@ class ConfigService{
             ->orderBy('id');
         $list   = $list->get();
         $list   = $list->toArray();
-
         foreach ($list as $k=>$data){
             switch ($data['type']){
                 case 3;
-                    $list[$k]['value_data'] = explode(',',$data['value']);
+                    $list[$k]['value_data'] = explode('，',$data['values']);
                     break;
             }
         }
@@ -34,7 +33,7 @@ class ConfigService{
             ];
             unset($data['file'],$data['_token']);
             foreach ($data as $k=>$value){
-              Config::where('enname',$k)->update(array('values'=> $value));
+              Config::where('enname',$k)->update(array('value'=> $value));
             }
             DB::commit();
             return $result;

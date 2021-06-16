@@ -23,8 +23,8 @@ class RmendController extends Controller
     }
 
     public function index(){
-        $req_result = $this->RmendService->getRmendList(5);
-        return view("admin.rmend.index")->with('rmends',$req_result['data']);
+        $data = $this->RmendService->getRmendList(5);
+        return view("admin.rmend.index")->with('rmends',$data);
     }
 
     public function create(){
@@ -36,7 +36,7 @@ class RmendController extends Controller
         $data   = $this->request->all();
         $req_result = $this->RmendService->createRmend($data);
         if($req_result['success']){
-            return redirect('/admin/remend');
+            return redirect('/admin/rmend');
         }else{
             return back()->withErrors([$req_result['msg']])->withInput();
         }
@@ -58,11 +58,14 @@ class RmendController extends Controller
     }
 
     public function destroy($id){
-        //删除数据
-        if(\DB::table("rmend")->delete($id)){
-            return 1;
-        }else{
-            return 0;
+        $req_result = $this->RmendService->deleteArticle($id);
+        if ($req_result['success'] == true) {
+            $result['code'] = 1000;
+            $result['msg']  = '操作成功';
+        } else {
+            $result['code'] = 2000;
+            $result['msg']  = isset($req_result['msg']) ? $req_result['msg'] : '操作失败';
         }
+        return $result;
     }
 }

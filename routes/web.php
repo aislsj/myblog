@@ -1,4 +1,25 @@
 <?php
+//前台
+Route::group(['namespace' => 'Home'], function () {
+
+    //前台
+    Route::group([], function () {
+        Route::get('/','IndexController@index');//主页
+        Route::get('/about','AboutController@index');//关于我
+        Route::get('/time','TimeController@index');//时间轴
+//        Route::get('/share','ShareController@index');//代码分享
+//        Route::get('/gbook','GbookController@index');//留言
+
+        //文章
+        Route::group([], function () {
+            Route::get('/category/{id}','CategoryController@index');
+            Route::get('/article/info/{id}','ArticleController@info');
+        });
+
+    });
+
+});
+
 
 //后台
 Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
@@ -38,10 +59,6 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
             Route::get('/config','SettingController@index');//系统设置
             Route::post('/config/update_config','SettingController@update_config');//保存系统设置
         });
-
-
-        Route::get('/ceshi','IndexController@ceshi');
-
     });
     //登录、注销 修改密码
     Route::group([], function () {
@@ -56,34 +73,4 @@ Route::group(['prefix' => 'admin','namespace' => 'Admin'], function () {
 
 
 
-
-Route::group(['namespace' => 'Home'], function () {
-
-
-    //商品秒杀测试
-    Route::group([], function () {
-        Route::get('/redis','RedisController@index'); //商品秒杀---设置库存
-        Route::get('/redis/start','RedisController@start');//商品秒杀---抢购
-        Route::get('/redis/result','RedisController@result');//商品秒杀---查询结果
-
-    });
-
-
-    //前台
-    Route::group([], function () {
-        Route::get('/','IndexController@index');//主页
-        Route::get('/about','AboutController@index');//关于我
-//        Route::get('/time','TimeController@index');//时间轴
-//        Route::get('/share','ShareController@index');//代码分享
-//        Route::get('/gbook','GbookController@index');//留言
-
-        //文章分类
-        Route::group([], function () {
-            Route::get('/category/{id}','CategoryController@index');
-            Route::get('/category/info/{id}','CategoryController@info');
-        });
-
-    });
-
-});
 

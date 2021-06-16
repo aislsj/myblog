@@ -6,7 +6,7 @@
     <h1 class="t_nav"><span>像“草根”一样，紧贴着地面，低调的存在，冬去春来，枯荣无恙。</span><a href="/" class="n1">网站首页</a><a href="/about" class="n2">关于我</a></h1>
     <div class="news_infos">
         <ul>
-            <p>一枚正在努力进步的php程序员。专长领域为php后台开发、商城开发、微信开发，目前正在向全栈工程师进发。。</p>
+            <p>一枚正在努力进步的php程序员。专长领域为php后台开发、商城开发、微信开发，目前正在向高级程序员进发。。</p>
             <br />
             <h2>About my blog</h2>
             &nbsp;

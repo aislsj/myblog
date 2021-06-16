@@ -23,9 +23,7 @@ class SettingController extends Controller{
     }
 
     public function index(){
-
         $data = ConfigService::getConfig();
-
         return view("admin.config.index")->with('data',$data);
     }
 

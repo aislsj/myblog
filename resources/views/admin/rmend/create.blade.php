@@ -131,7 +131,7 @@
         $.ajax({
             url: "/admin/uploadImage",
             method: "POST",
-            data: {"_token":'{{csrf_token()}}','img':initialAvatarURL,'type':'remend'},
+            data: {"_token":'{{csrf_token()}}','img':initialAvatarURL,'type':'rmend'},
             dataType: "json",
             success: function success(data) {
                 if(data['code']==200){

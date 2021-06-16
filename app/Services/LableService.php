@@ -52,7 +52,6 @@ class LableService{
     public static function deleteLable(int $id){
         DB::beginTransaction();
         try {
-
             $result['success'] = Lable::where('id', $id)->delete();
             DB::commit();
             return $result;

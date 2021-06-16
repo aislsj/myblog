@@ -11,12 +11,13 @@
         <h2 class="hometitle">推荐文章与分享</h2>
         <ul class="sidenews">
             @foreach($re_article as $value)
-                <li> @if($value['article_img_status'] == 1 )
+                <li>
+                    @if($value['article_img_status'] == 1 )
                         @foreach($value['articleImg'] as $img)
                         <i><img src=" {{$img['article_img_path']}}"></i>
                         @endforeach
                     @endif
-                    <p><a href="/list/info/{{$value['id']}}">{{$value['article_name']}}</a></p>
+                    <p><a href="/article/info/{{$value['id']}}">{{$value['article_name']}}</a></p>
                     <span>{{$value['created_at']}}</span>
                 </li>
             @endforeach
@@ -32,7 +33,7 @@
                             <i><img src=" {{$img['article_img_path']}}"></i>
                         @endforeach
                     @endif
-                    <p><a href="/list/info/{{$value['id']}}">{{$value['article_name']}}</a></p>
+                    <p><a href="/article/info/{{$value['id']}}">{{$value['article_name']}}</a></p>
                     <span>{{$value['created_at']}}</span>
                 </li>
             @endforeach

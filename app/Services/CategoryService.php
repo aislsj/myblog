@@ -43,7 +43,6 @@ class CategoryService{
             if (empty($data['name'])) {
                 throw new InvalidRequestException('博文类型不能为空');
             }
-
             unset($data['_token']);
             unset($data['file']);
             $data['created_at'] = Carbon::now();

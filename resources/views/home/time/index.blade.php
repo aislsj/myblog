@@ -7,12 +7,12 @@
     <div class="timebox">
         <ul id="list" >
             @foreach($article as $data)
-                <li><span>{{$data->article_addtime}}</span><a href="/article/{{$data->id}}" title="{{$data->article_name}}">{{$data->article_name}}</a></li>
-
+                <li>
+                    <span>{{ \Carbon\Carbon::parse($data->created_at)->format('Y-m-d') }}</span>
+                    <a href="/article/info/{{$data->id}}" title="{{$data->article_name}}">{{$data->article_name}}</a>
+                </li>
             @endforeach
-
         </ul>
-
     </div>
 </div>
 
@@ -20,7 +20,6 @@
     .pagelist{}
     .pagelist ul{display: inline-block;text-align: center;}
     .pagelist .pagination li{ display: inline;}
-    .active,.disabled{border: 1px solid #000;margin: 0 2px;padding: 5px 10px}
 </style>
 
     <div class="pagelist">

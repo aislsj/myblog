@@ -8,18 +8,17 @@
 namespace App\Http\Controllers\Home;
 
 use App\Http\Controllers\Controller;
+use App\Services\ArticleService;
+use App\Services\CategoryService;
 
 
 class ArticleController extends Controller{
 
 
-    //博文页面展示
-    public function info($id){//create
-        //查询分类
-        $article = \DB::table('article')->leftjoin('article_content','article.id','=','article_content.article_id')->where('article.id','=',$id)->first();
-       return view("home.article.index")->with('articles',$article);
 
+    public function info($id){
+        $ArticleInfo = ArticleService::getArticle($id);
+        $Category = CategoryService::getCategory($ArticleInfo['data']['category_id']);
+        return view("home.article.info")->with('article',$ArticleInfo['data'])->with('category',$Category['data']);
     }
-
-
 }

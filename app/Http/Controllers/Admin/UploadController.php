@@ -23,8 +23,8 @@ class UploadController extends Controller{
             case 'banner';
                 $path = 'Style/upload/img/banner/' ;
                 break;
-            case 'remend';
-                $path = 'Style/upload/img/remend/' ;
+            case 'rmend';
+                $path = 'Style/upload/img/rmend/' ;
                 break;
             case 'config';
                 $path = 'Style/upload/img/config/' ;

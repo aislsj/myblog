@@ -67,11 +67,21 @@ class RmendService{
     }
 
 
-
-
-
-
-
+    public static function deleteArticle(int $id){
+        DB::beginTransaction();
+        try{
+            $result            = [];
+            $result['success'] = Rmend::where('id', $id)->delete();
+            DB::commit();
+            return $result;
+        }catch (\Exception $exception){
+            DB::rollBack();
+            report(new InternalException($exception->getMessage()));
+            $result['success'] = false;
+            $result['msg']     = $exception->getMessage();
+            return $result;
+        }
+    }
 
 
 

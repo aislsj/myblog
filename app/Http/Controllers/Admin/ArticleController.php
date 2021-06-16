@@ -24,7 +24,7 @@ class ArticleController extends Controller{
 
 
     public function index(){
-        $data = ArticleService::getArticleList(10);
+        $data = ArticleService::getArticleList('',0,5);
         return view("admin.article.index")->with('data',$data);
     }
 

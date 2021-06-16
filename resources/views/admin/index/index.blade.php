@@ -45,7 +45,7 @@
                     <div class="logo-element">H+</div>
                 </li>
                 <li>
-                    <a class="J_menuItem"  href="admin/homepage" data-index="0"><i class="fa fa-home"></i><span class="nav-label">我的主页</span></a>
+                    <a class="J_menuItem"  href="/admin/homepage" data-index="0"><i class="fa fa-home"></i><span class="nav-label">我的主页</span></a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-table"></i> <span class="nav-label">我的博客</span><span class="fa arrow"></span></a>
@@ -109,7 +109,7 @@
             <button class="roll-nav roll-left J_tabLeft"><i class="fa fa-backward"></i></button>
             <nav class="page-tabs J_menuTabs">
                 <div class="page-tabs-content">
-                    <a href="javascript:;" class="active J_menuTab" data-id="index_v1.html">首页</a>
+                    <a href="javascript:;" class="active J_menuTab" data-id="/admin/homepage">首页</a>
                 </div>
             </nav>
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i></button>
@@ -122,10 +122,10 @@
                     <li class="J_tabCloseOther"><a>关闭其他选项卡</a></li>
                 </ul>
             </div>
-            <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>退出</a>
+            <a href="/admin/logout" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" id="index_frame" width="100%" height="100%" src="" frameborder="0" data-id="index_v1.html" seamless></iframe>
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="/admin/homepage" frameborder="0" data-id="/admin/homepage" seamless></iframe>
         </div>
         <div class="footer">
             <div class="pull-right">&copy; 2014-2015 <a href="http://www.zi-han.net/" target="_blank">zihan's blog</a></div>

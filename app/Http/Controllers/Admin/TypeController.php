@@ -15,7 +15,6 @@ class TypeController extends Controller{
 
     //显示分类页面
     public function index(){
-
         $data=\DB::table('type')->get();
         return view("admin.type.index")->with('data',$data);
     }
@@ -76,10 +75,9 @@ class TypeController extends Controller{
         }
     }
 
-    //删除数据
+    //删除分类名称
     public function destroy($id){
-
-        if(\DB::table("type")->delete($id)){//删除分类名称
+        if(\DB::table("type")->delete($id)){
             return 1;
         }else{
             return 0;

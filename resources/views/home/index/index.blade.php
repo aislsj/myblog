@@ -18,7 +18,7 @@
         <div class="toppic">
             @foreach($RmendArticle as $rmend)
                 <li>
-                    <a href="/category/info/{{$rmend['article_id']}}" >
+                    <a href="/article/info/{{$rmend['article_id']}}" >
                         <i><img src="{{$rmend['img_auth']}}"></i>
                         <h2>{{$rmend['article_id']}}</h2>
                         <span>{{$rmend['title']}}</span>
@@ -32,11 +32,9 @@
     <div class="blogsbox">
         @foreach($articles as $article)
             <div class="blogs" data-scroll-reveal="enter bottom over 1s" >
-
                 <h3 class="blogtitle">
-                    <a href="/category/info/{{$article['id']}}">{{$article['article_name']}}</a>
+                    <a href="/article/info/{{$article['id']}}">{{$article['article_name']}}</a>
                 </h3>
-
                 @if ($article['article_img_status_name'] == '普通图片')
                     @foreach($article['articleImg'] as $article_img)
                         <span class="blogpic"><a href="/" title=""><img src="{{$article_img['article_image_path']}}" alt=""></a></span>
