@@ -111,7 +111,7 @@ class ArticleService{
             }
 
             $articleContentData['content'] =  $data['article_content'];
-            unset($data['_token'],$data['article_content'],$data['_method'],);
+            unset($data['_token'],$data['article_content'],$data['_method']);
             $data['updated_at'] = Carbon::now();
             Article::where('id',$data['id'])->update($data);
             ArticleContent::where('article_id',$data['id'])->update($articleContentData);
