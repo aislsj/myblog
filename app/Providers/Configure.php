@@ -13,7 +13,6 @@ class Configure extends ServiceProvider
      */
     public function boot()
     {
-        dd(123);exit;
         View::composer(
             'home.public.header', //模板名
             'App\Http\Distribution\ConfigureController'  //方法名或者类中的方法

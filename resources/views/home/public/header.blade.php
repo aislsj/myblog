@@ -3,8 +3,8 @@
 <head>
     <meta charset="gbk">
     <title>樱花灿烂时，万物皆美好 - 一枚正在努力进步的php程序员个人博客网站</title>
-    <meta name="keywords" content="{{$myconfig['keywords']}}" />
-    <meta name="description" content="{{$myconfig['description']}}" />
+{{--    <meta name="keywords" content="{{$myconfig['keywords']}}" />--}}
+{{--    <meta name="description" content="{{$myconfig['description']}}" />--}}
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{ URL::asset('/Style/home/css/base.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('/Style/home/css/index.css') }}" rel="stylesheet">
@@ -18,6 +18,9 @@
 </head>
 <body background="/Style/home/images/002.jpg">
 <header>
+
+    <?php var_dump($myconfig);exit;?>
+
     <!--PC端开始-->
     <div class="menu">
         <nav class="nav" id="topnav">
