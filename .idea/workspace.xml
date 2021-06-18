@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="580a0e9f-d3dc-4035-be97-fe5a6c8de81f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -133,7 +132,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/routes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/AB" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -147,6 +146,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\phpstudy_pro\WWW\laravel-myblog\app\Http\Controllers\AB" />
       <recent name="F:\phpstudy_pro\WWW\laravel-myblog\routes" />
     </key>
   </component>
@@ -165,7 +165,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623996321907</updated>
       <workItem from="1623996323817" duration="649000" />
-      <workItem from="1623997352809" duration="3873000" />
+      <workItem from="1623997352809" duration="4768000" />
     </task>
     <servers />
   </component>
