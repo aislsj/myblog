@@ -8,7 +8,6 @@ class IndexController extends Controller
 {
 
     public function index(){
-        dd('后台');
         return view('admin.index.index');
     }
 
