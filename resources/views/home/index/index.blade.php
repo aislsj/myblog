@@ -71,6 +71,7 @@
     </div>
     <!--文章结束部分-->
 
+
     @include('home/public/index_left')
 </article>
 

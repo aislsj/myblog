@@ -14,8 +14,9 @@
     <script src="{{ URL::asset('/Style/home/js/scrollReveal.js') }}"></script>
     <script src="{{ URL::asset('/Style/home/js/common.js') }}"></script>
     <script src="/Style/home/js/modernizr.js"></script>
+{{--    <script src="https://cdn.jsdelivr.net/gh/yremp/yremp-js@1.5/sakura.js"></script>--}}
 </head>
-<body>
+<body background="/Style/home/images/002.jpg">
 <header>
     <!--PC端开始-->
     <div class="menu">
@@ -75,3 +76,58 @@
     </div>
     <!--Phone端结束-->
 </header>
+<script src="https://eqcn.ajz.miesnfu.com/wp-content/plugins/wp-3d-pony/live2dw/lib/L2Dwidget.min.js"></script>
+{{--    https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json--}}
+{{--    https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json--}}
+
+<!-- 上边的不同链接显示的是不同的小人，这个可以根据需要来选择 下边的初始化部分，可以修改宽高来修改小人的大小，或者是鼠标移动到小人上的透明度，也可以修改小人在页面出现的位置。 -->
+<script>
+    L2Dwidget.init({ "model": { jsonPath:
+                "https://unpkg.com/live2d-widget-model-shizuku@1.0.5/assets/shizuku.model.json",
+            "scale": 1 }, "display": { "position": "left", "width": 110, "height": 150,
+            "hOffset": 0, "vOffset": -20 }, "mobile": { "show": true, "scale": 0.5 },
+        "react": { "opacityDefault": 0.8, "opacityOnHover": 0.1 } });
+</script>
+<script type="text/javascript">
+    (function($){
+        $.fn.snow = function(options){
+            var $flake = $('<div id="snowbox" />').css({'position': 'absolute','z-index':'9999', 'top': '-50px'}).html('❄'),
+                documentHeight     = $(document).height(),
+                documentWidth  = $(document).width(),
+                defaults = {
+                    minSize   : 10,
+                    maxSize   : 20,
+                    newOn     : 1000,
+                    flakeColor : "#AFDAEF" /* 此处可以定义雪花颜色，若要白色可以改为#FFFFFF */
+                },
+                options = $.extend({}, defaults, options);
+            var interval= setInterval( function(){
+                var startPositionLeft = Math.random() * documentWidth - 100,
+                    startOpacity = 0.5 + Math.random(),
+                    sizeFlake = options.minSize + Math.random() * options.maxSize,
+                    endPositionTop = documentHeight - 200,
+                    endPositionLeft = startPositionLeft - 500 + Math.random() * 500,
+                    durationFall = documentHeight * 10 + Math.random() * 5000;
+                $flake.clone().appendTo('body').css({
+                    left: startPositionLeft,
+                    opacity: startOpacity,
+                    'font-size': sizeFlake,
+                    color: options.flakeColor
+                }).animate({
+                    top: endPositionTop,
+                    left: endPositionLeft,
+                    opacity: 0.2
+                },durationFall,'linear',function(){
+                    $(this).remove()
+                });
+            }, options.newOn);
+        };
+    })(jQuery);
+    $(function(){
+        $.fn.snow({
+            minSize: 5, /* 定义雪花最小尺寸 */
+            maxSize: 50,/* 定义雪花最大尺寸 */
+            newOn: 300  /* 定义密集程度，数字越小越密集 */
+        });
+    });
+</script>
