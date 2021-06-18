@@ -13,6 +13,7 @@ class IndexController extends Controller {
         $this->request = $request;
     }
     public function index(){
+        dd('这里是前台');
         //获取文章
         $articles = ArticleService::getArticleList(10);
         //获取轮播图
